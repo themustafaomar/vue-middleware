@@ -28,7 +28,7 @@ import App from './App.vue'
 const app: App = createApp(App)
 
 app.use(vueMiddleware, {
-  middlewares: {
+  middleware: {
     dashboard: ({ app, router, from, to, next, guest }: MiddlewareContext) => {
       next()
     },
