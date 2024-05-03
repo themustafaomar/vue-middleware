@@ -1,0 +1,1 @@
+export { LaravelPermissionsDriver } from './laravel'

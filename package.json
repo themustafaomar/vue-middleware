@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "main": "dist/vue-middleware.js",
+  "type": "module",
+  "scripts": {
+    "plugin:build": "npm run --workspace=vue-middleware build && tsc",
+    "docs:dev": "npm run --workspace=docs docs:dev",
+    "playground:dev": "pnpm run --filter=playground dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vue-tsc": "^2.0.16"
+  },
+  "dependencies": {
+    "vue": "^3.4.26",
+    "vue-router": "^4.3.2"
+  }
+}
