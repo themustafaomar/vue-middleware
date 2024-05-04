@@ -3,8 +3,8 @@
   "main": "dist/vue-middleware.js",
   "type": "module",
   "scripts": {
-    "plugin:build": "npm run --workspace=vue-middleware build && tsc",
-    "docs:dev": "npm run --workspace=docs docs:dev",
+    "plugin:build": "pnpm run --filter=vue-middleware build && tsc",
+    "docs:dev": "pnpm run --filter=docs docs:dev",
     "playground:dev": "pnpm run --filter=playground dev"
   },
   "devDependencies": {
