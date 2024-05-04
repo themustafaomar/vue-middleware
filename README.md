@@ -6,6 +6,12 @@ It helps you manage who can access which parts of your app especially when it co
 
 Out of the box it makes it super easy to handle Laravel roles and permissions without needing to set up a bunch of stuff using zero-config driver.
 
+## Demo
+
+For live demo please visit [https://vue-middleware-demo.vercel.app](https://vue-middleware-demo.vercel.app).
+
+For demo source code please visit the [playground](https://github.com/themustafaomar/vue-middleware/tree/main/packages/playground).
+
 ## Installation
 
 Follow these steps to quickly install `vue-middleware` into your project, in this example we're using npm.
@@ -64,3 +70,7 @@ export const routes = [
   }
 ]
 ```
+
+## License
+
+vue-middleware is released under the MIT License.

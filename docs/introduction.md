@@ -6,6 +6,6 @@ It helps you manage who can access which parts of your app especially when it co
 
 For live demo please visit [https://vue-middleware-demo.vercel.app](https://vue-middleware-demo.vercel.app).
 
-For Demo source code please visist [our playground](https://github.com/themustafaomar/vue-middleware/tree/main/packages/playground).
+For demo source code please visit [our playground](https://github.com/themustafaomar/vue-middleware/tree/main/packages/playground).
 
 Out of the box it makes it super easy to handle Laravel roles and permissions without needing to set up a bunch of stuff using zero-config driver.
