@@ -22,7 +22,7 @@ In `main.ts` we're goning to register our first `dashboard` middleware the funct
 
 ```ts
 import { createApp, App } from 'vue'
-import vueMiddleware, { MiddlewareContext } from 'vue-middleware'
+import vueMiddleware, { type MiddlewareContext } from 'vue-middleware'
 import App from './App.vue'
 
 const app: App = createApp(App)
@@ -30,7 +30,7 @@ const app: App = createApp(App)
 app.use(vueMiddleware, {
   middleware: {
     dashboard: ({ app, router, from, to, redirect, abort, guest }: MiddlewareContext) => {
-      next()
+      //
     },
   },
 })

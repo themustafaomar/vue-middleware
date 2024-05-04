@@ -29,8 +29,8 @@ const app: App = createApp(App)
 
 app.use(vueMiddleware, {
   middleware: {
-    dashboard: ({ app, router, from, to, next, guest }: MiddlewareContext) => {
-      next()
+    dashboard: ({ app, router, from, to, redirect, abort, guest }: MiddlewareContext) => {
+      //
     },
   },
 })
