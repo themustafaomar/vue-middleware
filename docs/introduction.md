@@ -2,7 +2,7 @@
 
 Vue middleware is a powerful Vuejs plugin for creating custom middleware, similar to what you find in Nuxt apps but with extra features for roles and permissions.
 
-It helps you manage who can access which parts of your app especially when it comes to different route-based roles or permissions using a nice driver-approach making it great with integrating other backend frameworks, for more information please visit the offical [documentation](https://vue-middleware-docs.vercel.app).
+It helps you manage who can access which parts of your app especially when it comes to different route-based roles or permissions using a nice driver-approach making it great with integrating other backend frameworks.
 
 For live demo please visit [https://vue-middleware-demo.vercel.app](https://vue-middleware-demo.vercel.app).
 

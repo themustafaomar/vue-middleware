@@ -12,7 +12,7 @@ app.use(vueMiddleware, {
       to,
       redirect,
       abort,
-      guest
+      guard
     }) {
       //
     },
@@ -40,19 +40,19 @@ In the middleware module file we will define our middleware, at the end it's pro
 ```ts
 import { type MiddlewareContext } from 'vue-middleware'
 
-export default ({ redirect, guest }: MiddlewareContext) => {
+export default ({ redirect, guard }: MiddlewareContext) => {
   // Assuming this is a Pinia store..
  const { loggedIn } = storeToRefs(useAuthStore())
 
   // The user is logged in and trying to
   // access auth page e.g: login and register.
-  if (loggedIn.value && guest) {
+  if (loggedIn.value && guard) {
     redirect('/dashboard')
   }
 
   // The user is not logged in and it's not entering
   // an auth page such as login or register.
-  if (!loggedIn.value && !guest) {
+  if (!loggedIn.value && !guard) {
     redirect('/auth/login')
   }
 
@@ -79,11 +79,13 @@ In routes file we can attach the middleware in the meta property with middleware
 }
 ```
 
-## Guest Guard
+## Guard
 
 When you create your authentication system, likely you will need to check if the user is trying to access login, register pages.. when it's already logged in
 
-In this senario the guest guard comes in to play, notice how we're going to use the same middleware but this time with guest guard to identity the guest pages, take a look the [earlier example](#creating-middleware-file) to get it into your mind.
+In this senario the guard comes in to play, notice how we're going to use the same middleware but this time with guest guard to identity the guest pages, take a look the [earlier example](#creating-middleware-file) to get it into your mind.
+
+Feel free to add new value as a guard and you will receive this value in the middleware, by default if you don't pass a guard value it's be undefined.
 
 ```ts
 {
@@ -181,4 +183,4 @@ Sometimes you may want to apply multiple middlewares in the parent layout but so
 | `to`        | The target route location | `RouteLocationNormalized` |
 | `redirect`  | Redirect to location | `(to: RouteLocationRaw) => void` |
 | `abort`     | Abort the navigation | `() => Symbol \| boolean` |
-| `guest`     | Identifies wheather the middleware uses guest flag | `boolean` |
+| `guard`     | The guard identifier | `boolean` |
