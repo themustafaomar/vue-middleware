@@ -1,13 +1,14 @@
 {
   "private": true,
-  "main": "dist/vue-middleware.js",
   "type": "module",
   "scripts": {
-    "plugin:build": "pnpm run --filter=vue-middleware build && tsc",
+    "plugin:build": "pnpm run --filter=vue-middleware build",
+    "plugin:build-dts": "pnpm run --filter=vue-middleware build:dts",
     "docs:dev": "pnpm run --filter=docs docs:dev",
     "playground:dev": "pnpm run --filter=playground dev"
   },
   "devDependencies": {
+    "@types/node": "^20.12.11",
     "typescript": "^5.4.5",
     "vite": "^5.2.11",
     "vue-tsc": "^2.0.16"

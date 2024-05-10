@@ -7,7 +7,7 @@ interface User {
 
 export function useAuth() {
   const user: Ref<User | null> = ref(null)
-  const permissions = ref([])
+  const permissions: Ref<{ permissions: []; roles: [] } | undefined> = ref(undefined)
   const loggedIn = computed(() => {
     return !!user.value
   })
@@ -21,7 +21,7 @@ export function useAuth() {
 
   const reset = () => {
     user.value = null
-    permissions.value = []
+    permissions.value = undefined
   }
 
   return { loggedIn, user, permissions, reset }
