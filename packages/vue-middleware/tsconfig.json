@@ -1,33 +1,16 @@
 {
-  "include": ["src"],
+  "extends": "../../tsconfig.json",
+  "include": ["src", "src/globalDeclarations.d.ts"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": false,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "dist",
+    "outDir": "dist/types",
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "sourceMap": true,
-    "rootDir": "./src"
-  },
-  "exclude": ["node_modules", "dist"]
+    "sourceMap": true
+  }
 }

@@ -1,12 +1,6 @@
 import { type App } from 'vue'
 import { Driver } from './driver'
 
-declare global {
-  interface Window {
-    Laravel: undefined | any
-  }
-}
-
 export class LaravelPermissionsDriver extends Driver {
   constructor(app: App) {
     super(app)
