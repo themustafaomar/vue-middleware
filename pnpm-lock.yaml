@@ -61,7 +61,7 @@ importers:
         specifier: ^3.4.21
         version: 3.4.26(typescript@5.4.5)
       vue-middleware:
-        specifier: workspace:vue-middleware
+        specifier: '*'
         version: link:../vue-middleware
       vue-router:
         specifier: ^4.3.2
