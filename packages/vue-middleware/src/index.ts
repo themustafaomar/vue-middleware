@@ -1,6 +1,7 @@
-import { type App } from 'vue'
+import type { App } from 'vue'
 import type { Router } from 'vue-router'
 import { type Options, handler } from './handler'
+import './globalDeclarations'
 
 export type { Options, MiddlewareContext } from './handler'
 
@@ -17,7 +18,7 @@ declare module 'vue' {
 
 const plugin = {
   install(app: App, options: Partial<Options> = {}) {
-    const router: Router | undefined = app.config.globalProperties.$router
+    const router: Router = app.config.globalProperties.$router
 
     if (!app.config.globalProperties.$router) {
       throw new Error(
