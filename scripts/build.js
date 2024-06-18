@@ -34,6 +34,7 @@ function generateConfig(format) {
     output: {
       format,
       name: format === 'umd' ? 'vue-middleware' : undefined,
+      exports: format === 'umd' || format === 'cjs' ? 'named' : undefined,
       globals: {
         vue: 'Vue',
         'vue-router': 'VueRouter',
@@ -46,6 +47,8 @@ function generateConfig(format) {
 async function build() {
   rimraf.sync(outputDir)
 
+  console.log(chalk.blackBright('⏳ Building library ./dist\n'))
+
   const formats = ['umd', 'es', 'cjs']
 
   for (const format of formats) {
@@ -56,10 +59,10 @@ async function build() {
     fs.outputFileSync(
       path.join(outputDir, fileName), code
     )
-    console.log(
-     `${chalk.bgGreen('Output File:')} ${fileName}\n`
-    )
+    console.log(chalk.cyan(`-> Generated library file ./dist/${fileName}`))
   }
+
+  console.log(chalk.blackBright('\n⏳ Generating declarations...'))
 
   execSync(`tsc --project ${tsconfigPath}`, {
     stdio: 'inherit',
@@ -76,7 +79,7 @@ async function build() {
 
   fs.outputFileSync(path.join(outputDir, 'vue-middleware.d.ts'), code)
 
-  console.log(`${chalk.blue('Declarations generated:')} vue-middleware.d.ts`)
+  console.log(chalk.cyan('\n-> Declarations generated: vue-middleware.d.ts'))
 
   rimraf.sync(path.resolve(outputDir, 'types'))
 }
